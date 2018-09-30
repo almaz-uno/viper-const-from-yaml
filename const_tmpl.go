@@ -1,10 +1,11 @@
 package main
 
-var constTmpl = `// {{.header}}
+var constTmpl = `package {{.pkg}}
+
+// {{.header}}
 const (
 	{{$keys := .keys}}
 	{{$map := .map}}
-	{{range $i, $k := $keys}} {{index $.map $k}} = "{{$k}}"
+	{{range $i, $k := $keys}}{{index $.map $k}} = "{{$k}}"
 	{{end}}
-)
-`
+)`
