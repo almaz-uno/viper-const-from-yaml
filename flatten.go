@@ -62,10 +62,11 @@ func flattenMap(result map[string]string, prefix string, v reflect.Value) {
 }
 
 func flattenSlice(result map[string]string, prefix string, v reflect.Value) {
-	prefix = prefix + "."
+	result[prefix] = fmt.Sprintf("%d", v.Len())
+	// prefix = prefix + "."
 
-	result[prefix+"#"] = fmt.Sprintf("%d", v.Len())
-	for i := 0; i < v.Len(); i++ {
-		flatten(result, fmt.Sprintf("%s%d", prefix, i), v.Index(i))
-	}
+	// result[prefix+"#"] = fmt.Sprintf("%d", v.Len())
+	// for i := 0; i < v.Len(); i++ {
+	// 	flatten(result, fmt.Sprintf("%s%d", prefix, i), v.Index(i))
+	// }
 }

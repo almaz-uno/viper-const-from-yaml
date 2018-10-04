@@ -40,6 +40,8 @@ const (
 	ConsumerJwtIss     = "consumer-jwt.iss"
 	ConsumerJwtType    = "consumer-jwt.type"
 	ConsumerJwtVersion = "consumer-jwt.version"
+	DbDialect          = "db.dialect"
+	DbParams           = "db.params"
 	IngestChanSize     = "ingest.chan-size"
 	JwtSecret          = "jwt-secret"
 	LogLevel           = "log-level"
