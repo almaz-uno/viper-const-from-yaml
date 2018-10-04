@@ -13,8 +13,6 @@ import (
 	"text/template"
 	"unicode"
 
-	"github.com/hashicorp/terraform/flatmap"
-
 	"gopkg.in/yaml.v2"
 )
 
@@ -97,7 +95,7 @@ func generate(srcData []byte, pkg string) ([]byte, error) {
 		return nil, err
 	}
 
-	flMap := flatmap.Flatten(srcMap)
+	flMap := Flatten(srcMap)
 	keys := make([]string, 0, len(flMap))
 
 	for k := range flMap {
