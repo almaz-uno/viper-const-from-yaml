@@ -6,6 +6,7 @@ var constTmpl = `package {{.pkg}}
 const (
 	{{$keys := .keys}}
 	{{$map := .map}}
-	{{range $i, $k := $keys}}{{index $.map $k}} = "{{$k}}"
+	{{$prefix := .prefix}}
+	{{range $i, $k := $keys}}{{$prefix}}{{index $.map $k}} = "{{$k}}"
 	{{end}}
 )`
